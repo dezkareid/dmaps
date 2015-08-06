@@ -72,7 +72,7 @@ var DMaps = (function (name, latitude, longitude, options, callback) {
         mapTypeId: google.maps.MapTypeId.ROADMAP,
       }
     }else{
-        configureMap(self.mapOptions);
+      //configureMap(self.mapOptions);
     }
 
   	self.map = new google.maps.Map(
@@ -90,6 +90,10 @@ var DMaps = (function (name, latitude, longitude, options, callback) {
 
   //Load map asyncronusly and add a callback if it is defined
   function loadMap () {
+    if(typeof google !== 'undefined'){
+      initialize();
+      return;
+    }
   	var script = document.createElement('script');
   	script.type = 'text/javascript';
    
