@@ -122,6 +122,10 @@ var DMaps = (function (name, latitude, longitude, options, callback) {
   
   }
 
+  api.prototype.getMarkers = function  () {
+    return self.markers;
+  }
+
   api.prototype.addInfo = function(marker, container) {
     var infowindow = new google.maps.InfoWindow({
       content: container
